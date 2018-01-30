@@ -1,6 +1,5 @@
 # Assignment #2 (Functions)
 ## Python for Informatics
-## Scott Warnock
 
 
 def to_number(str):
