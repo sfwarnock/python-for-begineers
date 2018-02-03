@@ -1,6 +1,5 @@
 # Assignment #3 Process Numbers
 # Looping, Searching, and Slicing.
-## Scott Warnock
 
 user_num = []
 
