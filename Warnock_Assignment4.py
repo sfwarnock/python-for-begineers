@@ -14,7 +14,7 @@ for line in fhand:
     line_list = line.split()
     for word in line_list:
         if word not in script_list:
-            script_list.append(word)
+            script_list.append(word.lower())
 
 script_list.sort()
 
