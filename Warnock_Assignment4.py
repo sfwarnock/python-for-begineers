@@ -12,11 +12,12 @@ script_list = []
 
 for line in fhand:
     line_list = line.split()
-    line_list.sort()
-    print line_list
-    
-    combine = line_list + script_list
-    
-    print combine
-    
+    for word in line_list:
+        if word not in script_list:
+            script_list.append(word)
+
+script_list.sort()
+
+print script_list
+             
 fhand.close()
