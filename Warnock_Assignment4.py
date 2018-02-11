@@ -21,3 +21,13 @@ script_list.sort()
 print script_list
              
 fhand.close()
+
+sub = raw_input('Input word: ')
+
+count = 0
+
+for word in script_list:
+    if word == sub:
+        count = count + 1
+        
+print sub,count
