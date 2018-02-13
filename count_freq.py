@@ -2,10 +2,8 @@ list1 = ['and', 'and', 'but', 'for', 'too']
 
 sub = raw_input('Test: ')
 
-count = 0
+def freq_count(user_input,list):
+    for user_input in list:
+        print list, ":",list.count(sub);
 
-for letter in list1:
-    if letter == sub:
-        count = count + 1
-
-print sub, count
+freq_count(sub,list1)
