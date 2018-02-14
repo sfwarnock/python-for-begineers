@@ -15,19 +15,21 @@ for line in fhand:
     for word in line_list:
         if word not in script_list:
             script_list.append(word.lower())
-
-script_list.sort()
+    script_list.sort()
 
 print script_list
              
 fhand.close()
 
-sub = raw_input('Input word: ')
+uis = raw_input('Input word: ')
 
-count = 0
+def freq_count(user,list1):
+    count = 0
+    for word in list1:
+        if (user) == word:
+            count = count + 1
+            print (user) + ' is found ' + str(count) + ' in ' + (word)
+        elif (user) != word:
+            print (user) + ' is found 0 times in ' + (word)
 
-for word in script_list:
-    if word == sub:
-        count = count + 1
-        
-print sub,count
+freq_count(uis,script_list)
