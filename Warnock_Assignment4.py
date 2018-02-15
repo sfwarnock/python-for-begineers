@@ -9,7 +9,6 @@ ufn = raw_input('Enter the text file name: ')
 fhand = open(r'C:/Users/Scott Warnock/Desktop/UCSD/Python/Python Code/romeo.txt')
 
 line_list = []
-
 script_list = []
 
 for line in fhand:
@@ -18,7 +17,6 @@ for line in fhand:
         if word not in script_list:
             script_list.append(word.lower())
     script_list.sort()
-
 print script_list
              
 fhand.close()
