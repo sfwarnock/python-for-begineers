@@ -4,6 +4,8 @@
 
 # %cd C:/Users/Scott Warnock/Desktop/UCSD/Python/Python Code/romeo.txt
 
+ufn = raw_input('Enter the text file name: ')
+
 fhand = open(r'C:/Users/Scott Warnock/Desktop/UCSD/Python/Python Code/romeo.txt')
 
 line_list = []
@@ -21,15 +23,13 @@ print script_list
              
 fhand.close()
 
-uis = raw_input('Input word: ')
+uis = raw_input('Enter the string you would like to serch for: ')
 
 def freq_count(user,list1):
-    count = 0
     for word in list1:
-        if (user) == word:
-            count = count + 1
-            print (user) + ' is found ' + str(count) + ' in ' + (word)
-        elif (user) != word:
-            print (user) + ' is found 0 times in ' + (word)
+        if user in word:
+            print word, word.count(user)
+        elif user not in word:
+            print word, word.count(user)
 
 freq_count(uis,script_list)
