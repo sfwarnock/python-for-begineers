@@ -2,11 +2,11 @@
 ## Scott Warnock
 ## Files, Lists, and Splits
 
-# %cd C:/Users/Scott Warnock/Desktop/UCSD/Python/Python Code/romeo.txt
-
 ufn = raw_input('Enter the text file name: ')
 
-fhand = open(r'C:/Users/Scott Warnock/Desktop/UCSD/Python/Python Code/romeo.txt')
+ufp = 'C:/Users/Scott Warnock/Desktop/UCSD/Python/Python Code/'
+
+fhand = open(ufp+ufn)
 
 line_list = []
 script_list = []
@@ -26,8 +26,8 @@ uis = raw_input('Enter the string you would like to serch for: ')
 def freq_count(user,list1):
     for word in list1:
         if user in word:
-            print word, word.count(user)
+            print uis, 'appears', word.count(user), 'time in', word
         elif user not in word:
-            print word, word.count(user)
+            print uis, 'appears', word.count(user), 'time in', word
 
 freq_count(uis,script_list)
