@@ -6,8 +6,16 @@ from urllib import urlopen
 
 #url = raw_input('Enter full url: ')
 
-url = 'http://krqe.com/'
+url = 'https://www.google.com/'
 
-doc = urlopen(url).read()
+size = 0
+
+while True:
+    doc = urlopen(url).read(512)
+    if len(doc)<1: break
+    print doc
+    
+doc.close()
+
 print doc[0:3000]
 print len(doc)
