@@ -4,21 +4,21 @@ import urllib
 
 url = ('https://www.google.com/')
 
-fhand = urllib.urlopen(url)
+html = urllib.urlopen(url)
 
 size = 0
 
 c_count = 0 #total character count.
 
-site =' '
+site =' ' #store the fully downloaded site
 
 while True:
-    char = fhand.read(512)
+    char = html.read(512)
     if (len(char)<1):
         break
     site = site + char
     c_count += len(char)
-fhand.close()
+html.close()
 
 site = site[:3000]
 
