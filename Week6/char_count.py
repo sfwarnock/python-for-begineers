@@ -8,10 +8,11 @@ fhand = urllib.urlopen(url)
 
 size = 0
 
-while True:
-    data = fhand.read(512)
-    size = size + len(data)
-    if (len(data))<1: break
-print size
+c_count = 0 #total character count.
 
-fhand.close()
+while True:
+    char = fhand.read(512)
+    c_count = c_count + len(char)
+    if c_count >= 3000:break
+    print char
+print c_count
