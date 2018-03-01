@@ -2,28 +2,31 @@
 ## Scott Warnock
 ## URL Reader
 
+# https://www.google.com/
+
 import urllib
 
-url = ('https://www.google.com/')
+try:
+    url = raw_input('Enter full url: ')
+    html = urllib.urlopen(url)
 
-html = urllib.urlopen(url)
+    size = 0
 
-size = 0
+    c_count = 0 #total character count.
 
-c_count = 0 #total character count.
+    site =' ' #store the fully downloaded site
 
-site =' ' #store the fully downloaded site
+    while True:
+        char = html.read(512)
+        if (len(char)<1):
+            break
+        site = site + char
+        c_count += len(char)
+    html.close()
 
-while True:
-    char = html.read(512)
-    if (len(char)<1):
-        break
-    site = site + char
-    c_count += len(char)
-html.close()
+    site = site[:2999]
 
-site = site[:3000]
+    print '\n', site, '\n', '\nThe site you entered contains '+ str(c_count) + ' characters.',
 
-print site
-
-print c_count
+except:
+    print 'The URL you entered does not work.'
