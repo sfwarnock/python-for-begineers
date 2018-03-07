@@ -20,9 +20,13 @@ while True:
     data = uh.read()
     #print 'Retrieved',len(data),'characters'
     #print data
-    tree = ET.fromstring(xmlstring)
+    tree = ET.fromstring(data)
     
-    for line in tree:
+    short_code = []
+    results = tree.findall()
+    short_code.append(results)
+    
+    for line in short_code:
         line = line.rstrip()
         x = re.findall('<short_name>([A-Z]+)<', line)
         for code in x:
