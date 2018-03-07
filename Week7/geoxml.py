@@ -22,12 +22,9 @@ while True:
     #print data
     tree = ET.fromstring(data)
     
-    short_code = []
-    results = tree.findall()
-    short_code.append(results)
+    short_code = tree.findall('result')
     
     for line in short_code:
-        line = line.rstrip()
         x = re.findall('<short_name>([A-Z]+)<', line)
         for code in x:
             if re.findall('[A-Z]', code):print code
