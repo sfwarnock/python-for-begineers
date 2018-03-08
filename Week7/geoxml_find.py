@@ -17,7 +17,7 @@ while True:
     #print data
     output = ET.fromstring(data)
     
-    short_code = ouput.findall('result')
+    short_code = ouput.findall('address_components')
     
     for item in short_code:
         print 'Short Country Code', item.find('short_name').text
