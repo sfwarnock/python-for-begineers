@@ -23,5 +23,6 @@ while True:
     
     results = tree.findall('result')
     for item in results:
-        print 'address_component'.find('short_name').text
+        if item.find('address_component').find('type') == 'country':
+            print item.find('address_component').find('short_name').txt
     break
