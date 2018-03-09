@@ -19,10 +19,11 @@ while True:
     data = uh.read()
     print 'Retrieved',len(data),'characters'
     print data
-    tree = ET.fromstring(data)
-    
-    results = tree.findall('result')
-    for item in results:
-        if item.find('address_component').find('type') == 'country':
-            print item.find('address_component').find('short_name').txt
+    stuff = ET.fromstring(data)
+
+    address = stuff.findall('result/address_component')
+
+    for item in address:
+        if item.find('type').text == 'country':
+                print item.find('short_name').text
     break
