@@ -19,11 +19,14 @@ while True:
     data = uh.read()
     print 'Retrieved',len(data),'characters'
     print data
+
     stuff = ET.fromstring(data)
 
     address = stuff.findall('result/address_component')
 
     for item in address:
         if item.find('type').text == 'country':
-                print item.find('short_name').text
+                print 'The country code is: ', item.find('short_name').text
+        elif item.find('type').text == 'natrual_feature':
+                print 'The location you entered is not a country'
     break
